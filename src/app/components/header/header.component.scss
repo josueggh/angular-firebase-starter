@@ -1,0 +1,39 @@
+:host{
+
+  .avatar{
+    border-radius: 50%;
+    border: 2px solid
+  }
+
+  mat-toolbar{
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .avatar{
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .menu-card{
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+
+    .name{
+      font-size:140%;
+    }
+
+    button{
+      margin-top:20px;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+
+
+}

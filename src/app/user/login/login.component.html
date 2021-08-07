@@ -1,0 +1,19 @@
+
+<mat-card>
+  <mat-card-title>Sign in</mat-card-title>
+
+  <div id="social-login">
+    <button mat-button *ngIf="authToggle.google" (click)="signIn(authProvider.GOOGLE_PROVIDER)">
+      <mat-icon svgIcon="googleLogo"></mat-icon>
+    </button>
+
+    <button mat-button *ngIf="authToggle.facebook" (click)="signIn(authProvider.FACEBOOK_PROVIDER)">
+      <mat-icon svgIcon="facebookLogo"></mat-icon>
+    </button>
+
+    <button mat-button *ngIf="authToggle.twitter" (click)="signIn(authProvider.TWITTER_PROVIDER)">
+      <mat-icon svgIcon="twitterLogo"></mat-icon>
+    </button>
+  </div>
+
+</mat-card>

@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My App</span>
+
+    <span class="spacer"></span>
+
+    <ng-container *ngIf="user; else anonymous">
+      <img class="avatar"
+           [src]="user.photoURL"
+           alt="{{user.displayName}}"
+           (click)="displayUserCard= !displayUserCard"
+      >
+    </ng-container>
+
+    <ng-template #anonymous>
+      <a routerLink="/user/login" mat-icon-button aria-label="Sign in">
+        <mat-icon>face</mat-icon>
+      </a>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="menu-card" *ngIf="displayUserCard">
+  <mat-card-content>
+    <img class="avatar" [src]="user?.photoURL" alt="{{user?.displayName}}">
+    <div class="name">{{user?.displayName}}</div>
+    <div class="email">{{user?.email}}</div>
+
+    <button mat-button (click)="signOut()">
+      Sign out
+    </button>
+  </mat-card-content>
+</mat-card>
